@@ -5,7 +5,7 @@ $(document).ready(function () { // Start Coding Here
     $(window).scroll(function () {
         var i = $(this).scrollTop()
 
-        if (i >= 150) {
+        if (i >= 100) {
             $("header").css("background-color", "var(--color4)")
                 .css("box-shadow", "0px 3px 6px 3px rgba(0,0,0,0.06)");
 
@@ -37,8 +37,8 @@ $(document).ready(function () { // Start Coding Here
     // Portfolio
 
     $('#mixedSlider').multislider({
-        duration: 1000,
-        interval: 1000
+        duration: 2000,
+        interval: 2000
     });
 
     // countTo

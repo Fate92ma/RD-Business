@@ -6,6 +6,8 @@ Contact Me: fatema131khaled@gmail.com
 
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *,
 *::after,
 *::before {
@@ -19,9 +21,15 @@ Contact Me: fatema131khaled@gmail.com
     -o-box-sizing: border-box
 }
 
+body {
+    font-family: 'Poppins', sans-serif
+}
+
 img {
     max-width: 100%
 }
+
+/* Start Root */
 
 :root {
     --color1: #1f1f1f;
@@ -31,14 +39,27 @@ img {
     --color5: #605f5f
 }
 
-/* Header */
-
-header {
+header,
+.list li,
+.services-card,
+#mixedSlider .MS-controls button,
+.team-card-image-overlay {
     -webkit-transition: .3s;
     -o-transition: .3s;
     -ms-transition: .3s;
     -moz-transition: .3s;
-    transition: .3s;
+    transition: .3s
+}
+
+h2 {
+    overflow-wrap: anywhere
+}
+
+/* End Root */
+
+/* Start Header */
+
+header {
     position: fixed;
     width: 100%;
     z-index: 9999999999
@@ -49,7 +70,7 @@ header nav img {
 }
 
 header nav {
-    width: 82%;
+    width: 85%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -63,24 +84,14 @@ header nav .list {
 }
 
 .list li {
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     color: var(--color1);
     font-size: 15px;
     cursor: pointer;
-    padding: 7px 14px
+    margin: 5px
 }
 
 .list li:hover {
     color: var(--color2)
-}
-
-.list li:last-of-type {
-    background: var(--color2);
-    color: var(--color4)
 }
 
 .menu {
@@ -101,7 +112,7 @@ header nav .list {
     background: var(--color4)
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1024px) {
     header nav {
         padding-bottom: 10px;
         flex-direction: column
@@ -119,20 +130,25 @@ header nav .list {
         width: fit-content;
         margin: auto
     }
-
 }
 
-/* Home */
+/* End Header */
+
+/* Start Home */
 
 .home {
-    background: url(../img/home/bg.jpg) center center/cover;
-    height: 100vh
+    background: url(../img/home/bg.jpg) center left/cover;
+    height: 100vh;
+    width: 100%;
+    display: table
 }
 
 .home-card {
-    width: 80%;
-    margin: auto;
-    padding-top: 250px
+    padding: 10px;
+    padding-top: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center
 }
 
 .home-card h1 {
@@ -146,7 +162,7 @@ header nav .list {
 
 .home-card h1:nth-of-type(2) {
     display: block;
-    margin: 30px 0;
+    margin: 20px 0;
     color: var(--color2);
     font-size: 30px
 }
@@ -169,55 +185,40 @@ header nav .list {
     background: var(--color2)
 }
 
-@media (max-width: 1040px) {
-    .home-card {
-        width: 90%
+@media (max-width: 1024px) {
+    .home-card h1:nth-of-type(1) {
+        font-size: 40px
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 480px) {
     .home-card h1:nth-of-type(1) {
-        font-size: 44px
-    }
-}
-
-@media (max-width: 650px) {
-    .home-card h1:nth-of-type(1) {
-        font-size: 34px
+        font-size: 28px;
+        overflow-wrap: anywhere
     }
 
     .home-card h1:nth-of-type(2) {
-        font-size: 26px
+        font-size: 24px
     }
 
     .home-card p {
-        font-size: 18px
+        font-size: 16px
     }
 }
 
-@media (max-width: 475px) {
-    .home-card h1:nth-of-type(1) {
-        font-size: 26px
-    }
-}
+/* End Home */
 
-@media (max-width: 300px) {
-    .home-card {
-        padding-top: 200px
-    }
-}
-
-/* Intro */
+/* Start Intro */
 
 .intro {
-    padding: 30px 0;
+    padding: 30px 10px;
     display: flex;
     width: 70%;
     margin: auto
 }
 
 .intro .number {
-    font-size: 150px;
+    font-size: 125px;
     color: var(--color3)
 }
 
@@ -250,53 +251,39 @@ header nav .list {
     color: var(--color5)
 }
 
-@media (max-width: 1288px) {
-    .intro article h2 {
-        font-size: 34px
+@media (max-width: 1200px) {
+
+    .intro,
+    .intro-reverse {
+        width: 80%
     }
 }
 
-@media (max-width: 1010px) {
-    .intro {
-        width: 96%;
-        text-align: center;
-        flex-direction: column
+@media (max-width: 1024px) {
+
+    .intro,
+    .intro-reverse {
+        width: 90%
     }
 }
 
-@media (max-width: 700px) {
-    .intro .number {
-        font-size: 125px
-    }
+@media (max-width: 768px) {
 
-    .intro article h2 {
-        font-size: 30px;
-        margin: 12px 0
-    }
-}
-
-@media (max-width: 525px) {
-    .intro .number {
-        font-size: 100px
+    .intro,
+    .intro-reverse {
+        width: 100%;
+        flex-direction: column;
+        text-align: center
     }
 
     .intro article h2 {
-        margin: 18px 0;
-        font-size: 24px
+        font-size: 32px
     }
 }
 
-@media (max-width: 300px) {
-    .intro article h2 {
-        font-size: 20px
-    }
+/* End Intro */
 
-    .intro article i {
-        font-size: 16px
-    }
-}
-
-/* About */
+/* Start About */
 
 .about {
     display: flex
@@ -309,7 +296,7 @@ header nav .list {
 
 .about-card {
     padding: 75px 15px;
-    color: white;
+    color: var(--color4);
     background: var(--color1)
 }
 
@@ -324,7 +311,7 @@ header nav .list {
     line-height: 30px
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1024px) {
     .about {
         flex-direction: column;
         text-align: center
@@ -336,23 +323,9 @@ header nav .list {
     }
 }
 
-@media (max-width: 575px) {
-    .about-card h2 {
-        font-size: 28px
-    }
-}
+/* End About */
 
-@media (max-width: 450px) {
-    .about-card h2 {
-        font-size: 24px
-    }
-
-    .about-card p {
-        font-size: 16px
-    }
-}
-
-/* Services */
+/* Start Services */
 
 .services {
     margin: 40px auto;
@@ -363,13 +336,8 @@ header nav .list {
 }
 
 .services-card {
-    margin: 20px;
-    width: 30%;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
+    margin: 10px;
+    flex-basis: 30%;
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -410,21 +378,22 @@ header nav .list {
     color: var(--color5)
 }
 
-@media (max-width: 1160px) {
-    .services-card {
-        width: 40%
+@media (max-width: 1200px) {
+    .services {
+        width: 100%
     }
 }
 
-@media (max-width: 990px) {
-    .services {
-        width: 96%
+@media (max-width: 1024px) {
+    .services-card {
+        flex-basis: 45%
     }
+}
 
+@media (max-width: 768px) {
     .services-card {
         text-align: center;
-        margin: 12px 0;
-        width: 100%
+        flex-basis: 96%
     }
 
     .services-card img {
@@ -436,24 +405,12 @@ header nav .list {
     }
 }
 
-@media (max-width: 500px) {
-    .services-card {
-        padding: 12px
-    }
+/* End Services */
 
-    .services-card h3 {
-        font-size: 16px
-    }
-
-    .services-card p {
-        font-size: 15px
-    }
-}
-
-/* Portfolio */
+/* Start Portfolio */
 
 #mixedSlider {
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-bottom: 15px;
     position: relative
@@ -479,11 +436,6 @@ header nav .list {
 }
 
 #mixedSlider .MS-controls button {
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     margin: 5px;
     background: var(--color2);
     border: none;
@@ -499,7 +451,7 @@ header nav .list {
 }
 
 .portfolio {
-    width: 80%;
+    width: 90%;
     margin: auto
 }
 
@@ -524,41 +476,32 @@ header nav .list {
     cursor: pointer
 }
 
-@media (max-width: 790px) {
+@media (max-width: 1024px) {
 
     #mixedSlider,
     .portfolio {
-        width: 96%
+        width: 96%;
+        text-align: center
     }
 }
 
-@media (max-width: 500px) {
-    .portfolio p {
-        font-size: 16px
-    }
-}
-
-@media (max-width: 400px) {
-    .portfolio p {
-        font-size: 15px
-    }
-}
-
-@media (max-width: 340px) {
+@media (max-width: 768px) {
     #mixedSlider .MS-content .ms-item {
         margin: 0;
         width: 100%
     }
 }
 
-/* Business */
+/* End Portfolio */
+
+/* Start Business */
 
 .business {
     background: var(--color1)
 }
 
 .intro-reverse {
-    width: 80%
+    width: 70%
 }
 
 .intro-reverse .number,
@@ -621,9 +564,18 @@ header nav .list {
     border-bottom: 4px solid var(--color4)
 }
 
-@media (max-width: 990px) {
-    .business {
-        text-align: center
+@media (max-width: 1200px) {
+    .business-card {
+        width: 80%
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .business-card,
+    .count {
+        text-align: center;
+        width: 90%
     }
 
     .business-card button {
@@ -631,58 +583,31 @@ header nav .list {
     }
 }
 
-@media (max-width: 850px) {
-
-    .business-card,
-    .count {
-        width: 96%
-    }
-}
-
-@media (max-width: 550px) {
+@media (max-width: 768px) {
     .count {
         flex-direction: column
     }
 
-    .count-card b {
-        width: fit-content;
-        margin: auto
-    }
-
-    .count .count-card:nth-of-type(2) {
-        margin: 20px auto
+    .count .count-card {
+        margin: auto;
+        text-align: center
     }
 }
 
-@media (max-width: 450px) {
-    .business-card p {
-        font-size: 15px
-    }
+/* End Business */
 
-    .business-card button {
-        padding: 12px 30px
-    }
-
-    .count .count-card .timer {
-        font-size: 50px
-    }
-
-    .count-card b {
-        font-size: 22px
-    }
-}
-
-/* Team */
+/* Start Team */
 
 .team {
-    width: 75%;
+    padding: 10px;
+    width: 80%;
     margin: 40px auto;
     text-align: center;
     display: flex
 }
 
 .team-card:nth-of-type(2) {
-    margin: 0 25px
+    margin: 0 20px
 }
 
 .team-card-image {
@@ -700,11 +625,6 @@ header nav .list {
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     border-radius: 50%;
     content: "";
     position: absolute;
@@ -746,13 +666,13 @@ header nav .list {
     color: var(--color5)
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
     .team {
-        width: 96%
+        width: 100%
     }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 768px) {
     .team {
         flex-direction: column
     }
@@ -762,15 +682,13 @@ header nav .list {
     }
 
     .team-card:nth-of-type(2) {
-        margin: 25px 0
-    }
-
-    .team-card p {
-        padding: 0
+        margin: 20px 0
     }
 }
 
-/* Footer */
+/* End Team */
+
+/* Start Footer */
 
 footer {
     padding: 40px 0;
@@ -779,105 +697,74 @@ footer {
 }
 
 .container {
-    width: 84%;
-    margin: auto;
+    width: 80%;
+    margin: auto
+}
+
+.footer-list {
     display: flex;
     justify-content: space-between
 }
 
-.footer-right {
+.footer-list ul {
     display: flex;
-    justify-content: space-between
-}
-
-.footer-left,
-.footer-right,
-.footer-right ul {
+    flex-direction: column;
     flex: 1
 }
 
-.footer-right ul:nth-of-type(2) {
-    flex: 2
-}
-
-.footer-right ul:nth-of-type(2) li {
-    cursor: default !important;
-    color: var(--color5)
-}
-
-.footer-left ul li,
-.footer-right ul li {
-    cursor: pointer;
+.footer-list ul li {
     margin-top: 4px;
     list-style: none
 }
 
-.footer-left h4,
-.footer-right h4 {
-    font-size: 16px;
+.container h4 {
+    font-size: 22px;
     margin: 15px 0
-}
-
-.footer-left-list {
-    display: flex
-}
-
-.footer-left-list ul {
-    flex: 1
-}
-
-.footer-right ul input {
-    padding: 5px 0;
-    outline: 0
-}
-
-.footer-right ul button {
-    display: block;
-    background: var(--color2);
-    color: var(--color4);
-    padding: 5px 20px;
-    margin: 10px 0;
-    font-size: 16px;
-    border-radius: 4px;
-    border: none;
-    outline: 0;
-    cursor: pointer
 }
 
 footer img,
 .footer-social {
-    margin-left: 100px
+    margin-left: 130px
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
     .container {
-        width: 96%;
+        width: 90%;
+    }
+
+    footer img,
+    .footer-social {
+        margin-left: 55px
     }
 }
 
-@media (max-width: 1090px) {
+@media (max-width: 1024px) {
 
-    .container,
-    .footer-left-list,
-    .footer-right {
+    .footer-list {
         flex-direction: column;
         text-align: center
     }
 
-    .footer-social {
-        display: flex;
-        justify-content: center;
-        margin: 0
+    .container {
+        text-align: center
     }
 
     footer img,
-    .footer-right ul button {
-        display: block;
-        margin: 10px auto
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        margin: auto
+    }
+
+    .team-card-image-overlay .fa,
+    .footer-social .fa {
+        margin: 3px auto
     }
 }
 
-/* Last */
+/* End Footer */
+
+/* Start Last */
 
 .last {
     display: flex;
@@ -895,14 +782,16 @@ footer img,
     margin: 0 10px
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1024px) {
     .last {
         flex-direction: column;
         text-align: center
     }
 }
 
-/* Back To Top */
+/* End Last */
+
+/* Start Back To Top */
 
 .top i {
     position: fixed;
@@ -920,3 +809,5 @@ footer img,
     background: var(--color1);
     z-index: 9999999999
 }
+
+/* End Back To Top */
